@@ -9,7 +9,7 @@ const output = document.getElementById("output");
 async function syllabify( ){
 	output.value = 'processing your input ... ';
 	console.log(textarea.value);
-	const response = await fetch('http://autosyll/proper_syllables.txt', {
+	const response = await fetch('https://main.d1rvmsp3b35yzu.amplifyapp.com/proper_syllables.txt', {
 		method: 'POST',
 		headers: {'Content-Type': 'text/plain',},
 		body: textarea.value,
