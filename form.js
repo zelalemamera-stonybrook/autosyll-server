@@ -20,12 +20,17 @@ async function syllabify( ){
 		return;
 	}
 	output.value = "";
-	const stream = await response.body.pipeThrough(new TextDecoderStream('utf8'));
+	const stream = response.body.pipeThrough(new TextDecoderStream('utf8'));
 	console.log(`stream received ${stream}`);
-	for await (const chunk of stream){
-		console.log(`received and decoded chunk from sever ${chunk}`);
-		output.value += chunk;
-	}
+	const reader = stream.getReader();
+	while(true){
+		const {value, done} = await reader.read();
+		console.log(`received and decoded chunk from sever ${value}`);
+		output.value += value;
+		if(done) {
+			break;
+		}
+		}
 	
 }
 
