@@ -21,7 +21,7 @@ async function syllabify( ){
 	}
 	output.value = "";
 	const stream = await response.body.pipeThrough(new TextDecoderStream('utf8'));
-	console.log(`type of response ${typeof stream}`);
+	console.log(`stream received ${stream}`);
 	for await (const chunk of stream){
 		console.log(`received and decoded chunk from sever ${chunk}`);
 		output.value += chunk;
