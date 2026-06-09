@@ -26,10 +26,10 @@ async function syllabify( ){
 	while(true){
 		const {value, done} = await reader.read();
 		console.log(`received and decoded chunk from sever ${value}`);
-		output.value += value;
 		if(done) {
 			break;
 		}
+		output.value += value;
 		}
 	
 }
