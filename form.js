@@ -31,11 +31,4 @@ async function syllabify( ){
 textarea.addEventListener('click', () => {
 	textarea.value = "";
 	}, {once: true});
-output.addEventListener('click', () => {
-	const message = "HH AH0 . L OW1 | W ER1 L D";
-	console.log(message);
-	if (output.value === message ){
-		output.value = "";
-		}
-}, {once: true});
 submit.addEventListener('click', syllabify)
