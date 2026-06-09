@@ -9,7 +9,7 @@ const output = document.getElementById("output");
 async function syllabify( ){
 	output.value = 'processing your input ... ';
 	console.log(textarea.value);
-	const response = await fetch('https://main.d1rvmsp3b35yzu.amplifyapp.com/', {
+	const response = await fetch('https://bkz4xxkc97.execute-api.us-east-2.amazonaws.com/', {
 		method: 'POST',
 		headers: {'Content-Type': 'text/plain',},
 		body: textarea.value,
